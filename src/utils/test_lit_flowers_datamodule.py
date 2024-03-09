@@ -1,8 +1,4 @@
 import pytest
-from lightning import LightningDataModule
-from torchvision import transforms
-
-from flowers_dataset import FlowersDataset
 from lit_flowers_datamodule import LightningFlowersDatamodule
 
 @pytest.fixture
