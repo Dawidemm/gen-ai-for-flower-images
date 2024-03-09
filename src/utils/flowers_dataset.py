@@ -1,7 +1,6 @@
-from torch.utils.data import Dataset, DataLoader
+from torch.utils.data import Dataset
 from torchvision.datasets import ImageFolder
 from torchvision import transforms
-import matplotlib.pyplot as plt
 
 class FlowersDataset(Dataset):
     def __init__(self, root_dir: str, transform=None):
