@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  setup:
+  setup_and_download:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -40,13 +40,6 @@ jobs:
           chmod 600 ~/.kaggle/kaggle.json
           cat ~/.kaggle/kaggle.json
 
-  download_dataset:
-    runs-on: ubuntu-latest
-    needs: setup
-    steps:
-      - name: Set permissions for kaggle.json
-        run: chmod 600 /home/runner/.kaggle/kaggle.json
-
       - name: Download dataset
         run: kaggle datasets download -d shahidulugvcse/national-flowers
         env:
@@ -55,7 +48,7 @@ jobs:
 
   test:
     runs-on: ubuntu-latest
-    needs: [setup, download_dataset]
+    needs: setup_and_download
     steps:
       - name: Test with flake8
         run: |
