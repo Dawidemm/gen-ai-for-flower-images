@@ -37,12 +37,12 @@ jobs:
         run: mkdir -p ~/.kaggle
     
       - name: Set up kaggle credentials
-        run: 
-            echo "{\"username\":\"$KAGGLE_USERNAME\",\"key\":\"$KAGGLE_API_TOKEN\"}" > ~/.kaggle/kaggle.json
-            chmod 600 ~/.kaggle/kaggle.json
         env:
             KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
             KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
+        run: 
+            echo "{\"username\":\"$KAGGLE_USERNAME\",\"key\":\"$KAGGLE_API_TOKEN\"}" > ~/.kaggle/kaggle.json
+            chmod 600 ~/.kaggle/kaggle.json
     
       - name: Download dataset
         run: kaggle datasets download -d shahidulugvcse/national-flowers
