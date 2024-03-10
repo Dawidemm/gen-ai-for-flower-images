@@ -37,7 +37,9 @@ jobs:
         run: mkdir -p ~/.kaggle
     
       - name: Set up kaggle credentials
-        run: echo "{\"username\":\"$KAGGLE_USERNAME\",\"key\":\"$KAGGLE_API_TOKEN\"}" > ~/.kaggle/kaggle.json
+        run: 
+            echo "{\"username\":\"$KAGGLE_USERNAME\",\"key\":\"$KAGGLE_API_TOKEN\"}" > ~/.kaggle/kaggle.json
+            chmod 600 ~/.kaggle/kaggle.json
         env:
             KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
             KAGGLE_KEY: ${{ secrets.KAGGLE_API_TOKEN }}
