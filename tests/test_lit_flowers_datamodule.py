@@ -1,5 +1,5 @@
 import pytest
-from lit_flowers_datamodule import LightningFlowersDatamodule
+from src.utils.lit_flowers_datamodule import LightningFlowersDatamodule
 
 @pytest.fixture
 def flowers_data_module():

@@ -1,7 +1,7 @@
 import pytest
 import torch
 from torchvision import transforms
-from flowers_dataset import FlowersDataset
+from src.utils.flowers_dataset import FlowersDataset
 
 @pytest.fixture
 def dataset():

@@ -3,7 +3,7 @@ from torch.utils.data import random_split
 from lightning import LightningDataModule
 from torchvision import transforms
 
-from flowers_dataset import FlowersDataset
+from src.utils.flowers_dataset import FlowersDataset
 
 class LightningFlowersDatamodule(LightningDataModule):
     def __init__(
