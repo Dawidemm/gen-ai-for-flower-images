@@ -1,3 +1,4 @@
 __pycache__
 flowerdataset/
 .pytest_cache
+*.egg-info
